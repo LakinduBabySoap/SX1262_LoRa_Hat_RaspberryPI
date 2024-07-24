@@ -14,7 +14,7 @@ if not LoRa.begin(busId, csId, resetPin, busyPin, irqPin, txenPin, rxenPin) :
     raise Exception("Something wrong, can't begin LoRa radio")
 
 LoRa.setDio2RfSwitch()
-# Set frequency to 868 Mhz
+# Set frequency to 923 Mhz
 print("Set frequency to 923 Mhz")
 LoRa.setFrequency(923000000)
 
@@ -73,7 +73,7 @@ while True :
     print("Transmit time: {0:0.2f} ms | Data rate: {1:0.2f} byte/s".format(LoRa.transmitTime(), LoRa.dataRate()))
 
     # Don't load RF module with continous transmit
-    time.sleep(5)
+    time.sleep(30)
     counter = (counter + 1) % 256
 
 try :
